@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>New Year</title>
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Oxygen+Mono"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+			rel="stylesheet"
+		/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="css/calc.css" />
+		<link rel="stylesheet" href="css/todo.css" />
+	</head>
+	<body class="disable-select">
+		<div id="starting-win">
+			<!-- <div style="width:100%; height:100%; text-align:center; background:black;" id="black-screen"></div> -->
+			<img src="img/icon_windows_blue.png" alt="Starting Windows" /><br />
+			<div class="ring">
+				<div class="indicator-1  indeterminate-ring"></div>
+				<div class="indicator-2  indeterminate-ring"></div>
+				<div class="indicator-3  indeterminate-ring"></div>
+				<div class="indicator-4  indeterminate-ring"></div>
+				<div class="indicator-5  indeterminate-ring"></div>
+			</div>
+		</div>
+		<div id="loader">
+			<i
+				class="fa fa-cog fa-spin fa-3x fa-fw"
+				style="color: rgba(162, 162, 162, 0.5)"
+			></i>
+			<span class="sr-only">Loading...</span>
+		</div>
+
+		<div id="main" contextmenu="alert('Not Allowed, Sorry!')">
+			<!-- This PC -->
+			<div
+				title="This PC"
+				class="desktop-item"
+				ondblclick="$('#tab').show(); $('.desktop-item').css('background-color','transparent');"
+				onmouseover="hoveredItem(this)"
+				onmouseout="hoveredOut(this)"
+				onclick="selectedItem(this)"
+			>
+				<img src="img/monitor.png" alt="This PC" />
+				<p id="name">This PC</p>
+			</div>
+
+			<!-- Calculator -->
+		
+			<!-- Todo App -->
+			
+			
+			<div
+				title="Nothing"
+				class="desktop-item"
+				ondblclick="$('#tab-todo').show(); $('.desktop-item').css('background-color','transparent');"
+				onmouseover="hoveredItem(this)"
+				onmouseout="hoveredOut(this)"
+				onclick="selectedItem(this)"
+			>
+				<img src="img/monitor1.png" alt="This PC" />
+				<p id="name">New Year Resolution Generator</p>
+			</div>
+
+      <div
+				title="Card Generator"
+				class="desktop-item"
+				ondblclick="$('#tab-todo1').show(); $('.desktop-item').css('background-color','transparent');"
+				onmouseover="hoveredItem(this)"
+				onmouseout="hoveredOut(this)"
+				onclick="selectedItem(this)"
+			>
+				<img src="img/greeting-card.png" alt="This PC" />
+				<p id="name">New Year Greeting Generator</p>
+			</div>
+
+      <div
+				title="Document Generator"
+				class="desktop-item"
+				ondblclick="$('#tab-todo2').show(); $('.desktop-item').css('background-color','transparent');"
+				onmouseover="hoveredItem(this)"
+				onmouseout="hoveredOut(this)"
+				onclick="selectedItem(this)"
+			>
+				<img src="img/document.png" alt="This PC" />
+				<p id="name">Document Resolution</p>
+			</div>
+
+      <div
+				title="Chat"
+				class="desktop-item"
+				ondblclick="$('#tab-todo3').show(); $('.desktop-item').css('background-color','transparent');"
+				onmouseover="hoveredItem(this)"
+				onmouseout="hoveredOut(this)"
+				onclick="selectedItem(this)"
+			>
+				<img src="img/chat.png" alt="This PC" />
+				<p id="name">Chat</p>
+			</div>
+
+			
+
+		</div>
+
+		<div id="start-bar">
+			<div
+				title="Option to logout or close the tab"
+				class="win-icon"
+				onclick="$('#logOut').toggle().fadein(5000);"
+			></div>
+			
+			<div title="fullscreen" id="fullscreen" onclick="toggleFullScreen()">
+				<i class="material-icons" style="font-size:36px" <input type="button" value="fullscreen" >
+				fullscreen</i>
+			</div>
+			
+			<div title="Current date and time" id="clock">
+				<i
+					class="fa fa-spinner fa-spin fa-3x fa-fw"
+					style="color: rgba(255, 255, 255, 0.5)"
+				></i>
+				<span class="sr-only">Loading...</span>
+			</div>
+		</div>
+
+		<div id="tab" >
+			<div id="tab-header" class="tab-header">
+				This PC <i class="fa fa-times" onclick="$('#tab').hide()"></i>
+			</div> <br/>
+			
+			
+			<div class="tab-middle">
+			<iframe class="resp-iframe" src="html/extend1.html" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+			</div>
+			
+			<div id="tab-footer">
+			</div>
+		</div>
+    
+		<div id="tab-calc">
+			<div id="tab-calc-header" class="tab-header">
+				Games
+				<i class="fa fa-times" onclick="$('#tab-calc').hide(); cls();"></i>
+			</div>
+			
+			
+			<div class="tab-middle-chats2" >
+			<iframe class="resp2-iframe" src="html/chat.html"></iframe>
+			</div>
+			
+		</div>
+		
+		
+		<div id="tab-todo">
+			<div id="tab-todo-header" class="tab-header">
+				New Year Resolution Generator <i class="fa fa-times" onclick="$('#tab-todo').hide();"></i>
+			</div>
+			<div class="tab-middle-chats">
+			<iframe class="resp2-iframe" src="https://newyearresolution1.herokuapp.com"></iframe>
+		  </div>
+    </div>
+			
+
+    <div id="tab-todo1">
+			<div id="tab-todo-header" class="tab-header">
+				New Year Greeting Generator <i class="fa fa-times" onclick="$('#tab-todo1').hide();"></i>
+			</div>
+			<div class="tab-middle-chats">
+			<iframe class="resp3-iframe" src="https://newdows-greeting.happiness514.repl.co"></iframe>
+		  </div>
+    </div>
+
+    <div id="tab-todo2">
+			<div id="tab-todo-header" class="tab-header">
+				Document Resolution <i class="fa fa-times" onclick="$('#tab-todo2').hide();"></i>
+			</div>
+			<div class="tab-middle-chats">
+			<iframe class="resp4-iframe" src="https://new-years-notes-mlh-new-year.shivthecodel.repl.co"></iframe>
+		  </div>
+    </div>
+
+    <div id="tab-todo3">
+			<div id="tab-todo-header" class="tab-header">
+				Chat <i class="fa fa-times" onclick="$('#tab-todo3').hide();"></i>
+			</div>
+			<div class="tab-middle-chats">
+			<iframe class="resp2-iframe" src="https://newyearnewchat.happiness514.repl.co"></iframe>
+		  </div>
+    </div>
+
+   
+			
+			
+			
+		
+		
+
+		<!-- The Logout (Windows Button) Part -->
+		<div id="logOut">
+			<div id="logout-btn">
+				
+				<button onclick="javascript:self.close()">Close Window (No-Logout)</button>
+				<br />
+				<br />
+				<a href="https://github.com/JoelJJoseph" target="_blank">
+					Contact Developer
+				</a>
+				<br />
+				<button onClick="$('#logOut').fadeOut();localStorage.clear();alert('success');window.location.reload();"
+				>
+					Logout</button>
+				<br/>
+			</div>
+			
+		</div>
+
+		<!-- Right Click Options -->
+		<div class="hide" id="body-rmenu">
+			<ul>
+			    <li
+					onclick="location.reload();"
+				>
+					refresh
+				</li>
+				<li id="blaah">
+					Change Background
+					<span style="float: right;"><i class="fa fa-arrow-right"></i></span>
+					<ul id="sub-menu">
+						<li onclick="changeBg(1)">1</li>
+						<li onclick="changeBg(2)">2</li>
+						<li onclick="changeBg(3)">3</li>
+						<li onclick="changeBg(6)">4</li>
+						<li onclick="changeBg(7)">5</li>
+						<li onclick="changeBg(4)">6</li>
+						<li onclick="changeBg(9)">7</li>
+						<li onclick="changeBg(8)">8</li>
+						<li onclick="changeBg(5)">9</li>
+					</ul>
+				</li>
+				<li
+					onclick="alert('New Year OS is Like web-based operating system made using HTML, CSS, Javascript and JQuery \nAnd This is made with love  \nHave a great day!')"
+				>
+					About New Year
+				</li>
+				
+			</ul>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
