@@ -4,7 +4,7 @@ import requests
 from twilio.twiml.messaging_response import MessagingResponse
 import openai
 
-openai.api_key = "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"
+openai.api_key = ""
 app = Flask(__name__)
 
 
